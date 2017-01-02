@@ -1,31 +1,39 @@
 var gulp = require('gulp');
-var scss = require('gulp-sass');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
 var autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('scss', function () {
-    gulp.src('css/**/*.scss')
-        .pipe(scss({includePaths: ['css']}))
+var _base = './';
+var _baseCss = _base + 'css';
+var _baseJs = _base + 'js';
+
+gulp.task('sass', function () {
+    return gulp.src(_baseCss + '/**/*.scss')
+        .pipe(sourcemaps.init())
+        // outputStyle: 'expanded','compressed'
+        .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
+        .pipe(sourcemaps.write())
+        // .pipe(sass({includePaths: [_baseCss]}))
         .pipe(autoprefixer({
-            //
             browsers: ['last 2 versions'],
-            // mobile
-            // browsers: ['> 1%'],
             cascade: false
         }))
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest(_baseCss));
 });
 
-gulp.task('browser-sync', function() {
-    browserSync.init(["css/**/*.css", "js/**/*.js", "**/*.html"], {
+gulp.task('browser-sync', function () {
+    // browserSync.init([_baseCss + "/**/*.scss", _baseJs + "/**/*.js", "**/*.html"], {
+    // browserSync.init([_baseCss + "/**/*.css"], {
+    browserSync.init([_baseCss + "css/common.css"], {
         notify: false,
         port: 9000,
         server: {
-            baseDir: "./"
+            baseDir: _base
         }
     });
 });
 
-gulp.task('default', ['scss', 'browser-sync'], function () {
-    gulp.watch("css/**/*.scss", ['scss']);
+gulp.task('default', ['sass', 'browser-sync'], function () {
+    gulp.watch(_baseCss + "/**/*.scss", ['sass']);
 });
