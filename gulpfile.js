@@ -7,6 +7,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var _base = './';
 var _baseCss = _base + 'css';
 var _baseJs = _base + 'js';
+var _baseHtml = _base;
 
 gulp.task('sass', function () {
     return gulp.src(_baseCss + '/**/*.scss')
@@ -23,9 +24,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('browser-sync', function () {
-    // browserSync.init([_baseCss + "/**/*.scss", _baseJs + "/**/*.js", "**/*.html"], {
-    // browserSync.init([_baseCss + "/**/*.css"], {
-    browserSync.init([_baseCss + "css/common.css"], {
+    browserSync.init([_baseCss + "/**/*.css",_base+ "*.html"], {
         notify: false,
         port: 9000,
         server: {
