@@ -15,5 +15,8 @@
     "gulp-load-plugins": "^1.4.0",
     "gulp-sass": "^3.0.0",
     "gulp-sourcemaps": "^1.9.1"
+  },
+  "dependencies": {
+    "chart.js": "^2.5.0"
   }
 }

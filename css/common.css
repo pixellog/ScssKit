@@ -1,13 +1,9 @@
-html {
-  font-size: 10px; }
+html { font-size: 10px; background-color: #fff; }
 
-body {
-  background-color: #fff;
-  font-size: 1.4rem; }
+body { background-color: #fff; font-size: 1.4rem; }
 
-h1 {
-  font-size: 4rem; }
+h1 { font-size: 4rem; }
 
-p {
-  display: -ms-flexbox;
-  display: flex; }
+p { display: -ms-flexbox; display: flex; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29tbW9uLmNzcyIsInNvdXJjZXMiOlsiY29tbW9uLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiaHRtbCB7XHJcbiAgZm9udC1zaXplOiAxMHB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbn1cclxuYm9keSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICBmb250LXNpemU6IDEuNHJlbTtcclxufVxyXG5oMSB7XHJcbiAgZm9udC1zaXplOiA0cmVtO1xyXG59XHJcblxyXG5wIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcbiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxBQUFBLElBQUksQ0FBQyxFQUNILFNBQVMsRUFBRSxJQUFJLEVBQ2YsZ0JBQWdCLEVBQUUsSUFBSSxHQUN2Qjs7QUFDRCxBQUFBLElBQUksQ0FBQyxFQUNILGdCQUFnQixFQUFFLElBQUksRUFDdEIsU0FBUyxFQUFFLE1BQU0sR0FDbEI7O0FBQ0QsQUFBQSxFQUFFLENBQUMsRUFDRCxTQUFTLEVBQUUsSUFBSSxHQUNoQjs7QUFFRCxBQUFBLENBQUMsQ0FBQyxFQUNBLE9BQU8sRUFBRSxJQUFJLEdBQ2QifQ== */

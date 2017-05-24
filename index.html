@@ -1,13 +1,482 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/common.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT Tracker</title>
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+    <link rel="stylesheet" href="/css/ui.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/Chart.min.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/common.js"></script>
+    <script>ui.menuSet("m01000000");</script>
 </head>
 <body>
-<h1>title</h1>
-<p>Lorefasdfm ipsum dolor sit amet, consectetur adipisicing elit. Esse, obcaecati.</p>
-<script src="js/common.js"></script>
+
+<div id="container">
+    <div id="header">
+        <div class="news-ticker">
+            <ul>
+                <li><span class="title">최근공지: OTP ※ 가이드</span> <span class="date">2016-12-07</span></li>
+                <li>news ticker 2</li>
+                <li>news ticker 3</li>
+            </ul>
+            <div class="scrollList-controller">
+                <button type="button" class="btn btn-prev"><span class="blind">이전</span></button>
+                <button type="button" class="btn btn-next"><span class="blind">다음</span></button>
+            </div>
+        </div>
+        <div class="submenu">
+            <span class="admin">KT종합물류 - kttester <span>(관제운영자)님</span></span>
+            <button type="button" class="btn btn-md btn-default">로그아웃</button>
+            <!--<button type="button" class="btn btn-md btn-default">로그인</button>-->
+            <button type="button" class="btn btn-md btn-default btn-cs">고객지원</button>
+            <select name="" id="" class="select language">
+                <option value="">한국어</option>
+                <option value="">English</option>
+            </select>
+        </div>
+    </div>
+    <div id="body">
+        <div class="tabs">
+            <ul>
+                <li><a href="#tabs1">전체</a></li>
+            </ul>
+            <button type="button" id="btnTabAdd" class="btn btn-tab-add"><span class="blind">탭추가</span></button>
+            <div id="tabs1-1" class="body">
+                <div id="sidebar">
+
+                    <div class="sidebar-title">(주)kt종합물류</div>
+                    <div class="sidebar-form-search">
+                        <select name="" id="">
+                            <option value="">전체</option>
+                        </select>
+                        <input type="search" placeholder="차량번호 검색">
+                    </div>
+                    <div id="sidebar-scroll">
+                        <ul class="asset-list">
+                            <li>
+                                <div class="statu"><img src="/img/ico_normal.png" alt="정상"><img src="/img/ico_enough.png" alt="충분"></div>
+                                <ul>
+                                    <li class="items-asset"><span class="title">자산명</span><span class="value">단말기장착물품명</span></li>
+                                    <li class="items-admin"><span class="title">관리자명</span><span class="value">홍길동</span></li>
+                                    <li class="items-time"><span class="title">최종수집시간</span><span class="value">2017-05-18 13:55:00</span></li>
+                                    <li class="items-location"><span class="title">위치</span><span class="value">서울특별시 동작구 등용로4길 139</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="statu"><img src="/img/ico_normal.png" alt="정상"><img src="/img/ico_good.png" alt="양호"></div>
+                                <ul>
+                                    <li class="items-asset"><span class="title">자산명</span><span class="value">단말기장착물품명</span></li>
+                                    <li class="items-admin"><span class="title">관리자명</span><span class="value">홍길동</span></li>
+                                    <li class="items-time"><span class="title">최종수집시간</span><span class="value">2017-05-18 13:55:00</span></li>
+                                    <li class="items-location"><span class="title">위치</span><span class="value">서울특별시 동작구 등용로4길 139</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="statu"><img src="/img/ico_normal.png" alt="정상"><img src="/img/ico_caution.png" alt="주의"></div>
+                                <ul>
+                                    <li class="items-asset"><span class="title">자산명</span><span class="value">단말기장착물품명</span></li>
+                                    <li class="items-admin"><span class="title">관리자명</span><span class="value">홍길동</span></li>
+                                    <li class="items-time"><span class="title">최종수집시간</span><span class="value">2017-05-18 13:55:00</span></li>
+                                    <li class="items-location"><span class="title">위치</span><span class="value">서울특별시 동작구 등용로4길 139</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="statu"><img src="/img/ico_error.png" alt="장애"><img src="/img/ico_none.png" alt="없음"></div>
+                                <ul>
+                                    <li class="items-asset"><span class="title">자산명</span><span class="value">단말기장착물품명</span></li>
+                                    <li class="items-admin"><span class="title">관리자명</span><span class="value">홍길동</span></li>
+                                    <li class="items-time"><span class="title">최종수집시간</span><span class="value">2017-05-18 13:55:00</span></li>
+                                    <li class="items-location"><span class="title">위치</span><span class="value">서울특별시 동작구 등용로4길 139</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <button type="button" id="btnAssetAdd" class="btn btn-primary btn-lg btn-block">자산등록</button>
+
+                    <button type="button" class="btn btn-slide-toggle"><span class="blind">닫기</span></button>
+                </div>
+                <div id="content">
+                    <div class="content-header-area">
+                        <div class="location">전라북도 진안군 주천면 주양리 산 51-11</div>
+                        <div class="search-area"><input type="text">
+                            <button type="button" class="btn btn-search"><span class="blind">검색하기</span></button>
+                        </div>
+                        <div class="map-area">
+                            <button type="button" class="btn">위성</button>
+                            <button type="button" class="btn">지도</button>
+                        </div>
+                    </div>
+
+                    <div id="map-area">
+                        <button type="button" class="btn btn-dashboard"><span class="blind">dashboard</span></button>
+                        // 지도영역
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="dialogAssetRegist" class="popup" title="자산등록">
+    <img src="/img/asset_thum.png" alt="사진선택">
+    <dl>
+        <dt>구분</dt>
+        <dd>
+            <select name="" id="">
+                <option value="">1차 분류</option>
+            </select>
+            <select name="" id="">
+                <option value="">2차 분류</option>
+            </select>
+        </dd>
+        <dt>자산명</dt>
+        <dd><input type="text" placeholder="ex: 카고 로더01"></dd>
+        <dt>관리자명</dt>
+        <dd><input type="text" placeholder="ex: 카고 로더02"></dd>
+    </dl>
+</div>
+
+<div id="dialogSearchLog" class="popup" title="Tracking 이력조회">
+    <ul class="asset-list">
+        <li>
+            <div class="statu"><img src="/img/ico_normal.png" alt="정상"><img src="/img/ico_enough.png" alt="충분"></div>
+            <ul>
+                <li class="items-asset"><span class="title">자산명</span><span class="value">단말기장착물품명</span></li>
+                <li class="items-admin"><span class="title">관리자명</span><span class="value">홍길동</span></li>
+                <li class="items-time"><span class="title">최종수집시간</span><span class="value">2017-05-18 13:55:00</span></li>
+                <li class="items-location"><span class="title">위치</span><span class="value">서울특별시 동작구 등용로4길 139</span></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div id="dialogSearchLog2" class="popup" title="Tracking 이력조회">
+    <div class="tabs" id="tabsSearchLog">
+        <ul>
+            <li><a href="#tabs1">지도보기</a></li>
+            <li><a href="#tabs2">리스트보기</a></li>
+        </ul>
+        <div class="tabs-header">
+            <div class="row">
+                <div class="form-date">
+                    <button type="button" class="btn btn-prev"><span class="blind">이전달</span></button>
+                    <button type="button" class="btn btn-date">2017-05-15</button>
+                    <button type="button" class="btn btn-next"><span class="blind">다음달</span></button>
+                </div>
+                <button type="button" class="btn-primary btn-md">경로보기</button>
+            </div>
+            <div class="row">
+                <ol>
+                    <li><span>0</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>1</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li class="active"><span>2</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li class="active"><span>3</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li class="active"><span>4</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li class="active"><span>5</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li class="active"><span>6</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li class="active"><span>7</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>8</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>9</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>10</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>11</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>12</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>13</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>14</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>15</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>16</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>17</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>18</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>19</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>20</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>21</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>22</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>23</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                    <li><span>24</span>
+                        <button type="button" class="btn"></button>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="tabs-panel">
+            <div id="tabs1">
+                <div class="map-area"></div>
+            </div>
+            <div id="tabs2">
+                <table class="table table-bordered table-fixed">
+                    <thead>
+                    <tr>
+                        <th>수집일시</th>
+                        <th>위치</th>
+                        <th>상태</th>
+                        <th>배터리</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>2017-06-03 21:32:32</td>
+                        <td>전라남도 순천시 황천면 선변리 592-8</td>
+                        <td>정상</td>
+                        <td>95</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="dialogDashboard" class="popup" title="Dashboard">
+
+    <div class="items manage-condition">
+        <h3>운용현황</h3>
+        <ul class="result"></ul>
+    </div>
+
+    <div class="items device-condition">
+        <h3>단말기상태</h3>
+        <div class="result"></div>
+    </div>
+
+    <div class="items error-condition">
+        <h3>장애현황</h3>
+        <div class="result"></div>
+    </div>
+
+    <div class="items time-condition">
+        <h3>시간대별 수신현황
+            <small>2017-05-16</small>
+        </h3>
+    </div>
+
+    <div class="items geo-fencing">
+        <h3>지오펜싱</h3>
+    </div>
+
+    <div class="items event-condition">
+        <h3>이벤트조치율</h3>
+    </div>
+
+</div>
+
+<div id="insrstRgnMapAddPopup2" class="popup" title="관심지역추가">
+    <h4 class="mt50" lang="ko">선택한 장소의 관심지역명을 등록해 주세요.</h4>
+
+
+    <label for="insrstRgnName" lang="ko">관심지역명</label>
+    <input type="text" value="" id="insrstRgnName" maxlength="30">
+
+
+    <p>
+        <span lang="ko">주소를 다시 검색하시려면</span>
+        <a href="#" class="anchor" id="btnBackInsrstRgn" lang="ko">여기</a><span lang="ko">를 눌러 주세요.</span>
+        <br><span lang="ko">초기 검색 페이지로 돌아갑니다.</span>
+    </p>
+</div>
+
 </body>
 </html>
