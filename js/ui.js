@@ -34,7 +34,7 @@ var ui = {
                     items.push("</ul>");
 
                     var menuHtml = items.join('');
-                    $('#header').append('<h1 class="logo"><a href="./"><span class="blind">KT Tracker</span></a></h1>' + menuHtml );
+                    $('#header').append('<h1 class="logo"><a href="./"><span class="blind">KT Tracker</span></a></h1>' + menuHtml);
 
                     $('#header .depth1 a').on('mouseenter', function () {
                         $(this).parent().siblings().find('ul').hide();
@@ -71,17 +71,17 @@ var ui = {
                     $('body').append('<div id="quick" />');
                     var $target = $('#quick');
                     var data = {
-                        menu1 : '#none',
-                        menu2 : '#none',
-                        menu3 : '#none',
-                        menu4 : '#none',
-                        menu5 : '#none'
+                        menu1: '#none',
+                        menu2: '#none',
+                        menu3: '#none',
+                        menu4: '#none',
+                        menu5: '#none'
                     };
 
                     var items = [];
                     items.push('<ul>');
-                    $.each(data, function (key,val) {
-                        items.push('<li><a href="'+val+'">'+key+'</a></li>');
+                    $.each(data, function (key, val) {
+                        items.push('<li><a href="' + val + '">' + key + '</a></li>');
                     });
                     items.push('</ul>');
                     $target.html(items.join(''));
@@ -90,6 +90,3 @@ var ui = {
         });
     }
 };
-
-(function ($) {
-})(jQuery);

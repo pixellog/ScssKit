@@ -395,7 +395,7 @@ a { text-decoration: none; color: #2d2d2d; }
 .on > a { color: red; }
 #container { position: relative; width: 100%; min-width: 1200px; height: 100%; overflow: hidden; }
 #header { height: 110px; position: relative; z-index: 100; }
-#header .logo { position: absolute; left: 20px; top: 20px; width: 143px; height: 27px; background: url(/img/logo.png) 0 0 no-repeat; }
+#header .logo { position: absolute; left: 20px; top: 15px; width: 143px; height: 29px; background: url(/img/logo_popup.png) 0 0 no-repeat; }
 #header .news-ticker { position: absolute; font-size: 13px; top: 24px; left: 180px; padding: 2px 10px; background-color: #f6f7fb; border-radius: 10px; width: 500px; height: 22px; overflow: hidden; }
 #header .news-ticker li { clear: both; overflow: hidden; display: block; position: relative; }
 #header .news-ticker .date { position: absolute; right: 40px; }
@@ -484,7 +484,12 @@ a { text-decoration: none; color: #2d2d2d; }
 .dialog-asset-regist dt { margin: 7px 0 2px; }
 .dialog-asset-regist dd { position: relative; }
 /* 팝업 : Tracking 이력조회 */
-.dialog-search-log2 .tabs { background-color: #fff;}
+.dialog-search-log2 .asset-list { clear: both; overflow: hidden; margin-bottom: 10px;}
+.dialog-search-log2 .asset-list > li { background: none;}
+.dialog-search-log2 .asset-list .statu { float: left;}
+.dialog-search-log2 .asset-list ul { margin:0; float: left;}
+.dialog-search-log2 .asset-list ul li { float: left; margin-left: 10px;}
+.dialog-search-log2 .tabs { background-color: #fff; clear: both;}
 .dialog-search-log2 .ui-tabs-nav li { width: 49.72%; }
 .dialog-search-log2 .ui-tabs-nav li a { display: block; font-size: 18px; text-align: center; color: #999; height: 40px; padding: 6px 0 0; width: 100%; }
 .dialog-search-log2 .ui-tabs-nav li.ui-state-active a { color: #333; background-color: #fff; }
@@ -495,21 +500,27 @@ a { text-decoration: none; color: #2d2d2d; }
 .dialog-search-log2 .tabs-header .form-date .btn-next { width: 17px; height: 17px; background: url(/img/ico_next.png) 0 0 no-repeat; }
 .dialog-search-log2 .tabs-header .form-date .btn-date { background: transparent url(/img/ico_calendar.png) 10px 6px no-repeat; border: 1px solid #a8abb3; border-radius: 15px; padding: 2px 10px; margin: 0 5px; font-size: 18px; color: #333; text-indent: 20px; }
 .dialog-search-log2 .tabs-header .btn-primary { position: absolute; right: 0; top: 20px; padding: 0 36px; }
-.dialog-search-log2 .tabs-header ol { clear: both; overflow: hidden; padding: 0;  padding-top: 20px; margin-left: 4px; }
-.dialog-search-log2 .tabs-header li { float: left; width: 44px; text-align: center; margin-left: 1px; line-height: 26px; }
+.dialog-search-log2 .tabs-header ol { clear: both; overflow: hidden; padding: 0;  padding-top: 10px; margin-left: 4px; }
+.dialog-search-log2 .tabs-header li { float: left; width: 45px; text-align: center; margin-left: 1px; line-height: 26px; }
 .dialog-search-log2 .tabs-header li button { height: 26px; display: block; width: 100%; }
 .dialog-search-log2 .tabs-header li.active button { background: #48aaf0 url(/img/ico_chk.png) 50% no-repeat; }
 .dialog-search-log2 .table-fixed thead { display: block; overflow: auto; width: 100%; }
-.dialog-search-log2 .table-fixed tbody { display: block; height: 526px; overflow: auto; width: 100%; }
+.dialog-search-log2 .table-fixed tbody { display: block; height: 498px; overflow: auto; width: 100%; }
 .dialog-search-log2 .table-fixed tr > *:nth-child(1) { width: 180px; }
-.dialog-search-log2 .table-fixed tr > *:nth-child(2) { width: 720px; }
+.dialog-search-log2 .table-fixed tr > *:nth-child(2) { width: 750px; }
 .dialog-search-log2 .table-fixed tr > *:nth-child(3) { width: 100px; }
 .dialog-search-log2 .table-fixed tr > *:nth-child(4) { width: 100px; }
-.dialog-search-log2 .map-area { height: 560px; background-color: #efefef; }
+.dialog-search-log2 .map-area { height: 550px; background-color: #efefef; }
 
 /* dialog-dashboard */
-.dialog-dashboard { background-color: #ebedf0; }
-.dialog-dashboard .ui-dialog-title { text-align: center; background-color: transparent; }
+.dialog-dashboard { background: #ebedf0 url(/img/dashboard_title.png) 50% 15px no-repeat; border: 0 !important; }
+.dialog-dashboard .ui-dialog-titlebar { background: transparent url(/img/logo_popup.png) 20px 15px no-repeat;}
+.dialog-dashboard .ui-dialog-title { display: none;}
+.dialog-dashboard .ui-dialog-titlebar .ui-button,
+.dialog-dashboard .ui-dialog-titlebar .ui-button:hover { width: 22px; height: 22px; background: url(/img/btn_close.png) 0 0 no-repeat !important;}
+.dialog-dashboard .ui-dialog-titlebar-close { right: 20px; top: 16px; margin-top: 0;}
+.dialog-dashboard .ui-dialog-content { position: static;}
+.dialog-dashboard .btn-refresh { position: absolute; right: 71px; top: 16px; width:23px; height:23px; background: transparent url(/img/ico_refresh.png) 0 0 no-repeat; }
 .dialog-dashboard .items { padding: 30px; height: 424px; border: 1px solid rgb(225, 227, 230); border-radius: 3px; background-color: #fff; position: absolute; }
 .dialog-dashboard h3 { margin-bottom: 67px; font-size: 24px; color: rgb(51, 51, 51); line-height: 1.2; }
 .dialog-dashboard canvas { position: absolute;}
@@ -520,12 +531,12 @@ a { text-decoration: none; color: #2d2d2d; }
 .dialog-dashboard .counter { position: absolute; font-size: 20px; }
 .dialog-dashboard .counter strong { font-weight: 400; font-size: 28px; line-height: 1;display: inline-block;}
 
-.manage-condition { left: 135px; top: 83px; width: 544px;  }
-.device-condition { left: 687px; top: 83px; width: 544px; }
-.error-condition { left: 1239px; top: 83px; width: 544px; }
-.time-condition { left: 135px; top: 515px; width: 1096px; }
-.geo-fencing { left: 1239px; top: 515px; width: 268px; }
-.event-condition { left: 1515px; top: 515px; width: 268px; }
+.manage-condition { left: 135px; top: 63px; width: 544px;  }
+.device-condition { left: 687px; top: 63px; width: 544px; }
+.error-condition { left: 1239px; top: 63px; width: 544px; }
+.time-condition { left: 135px; top: 495px; width: 1096px; }
+.geo-fencing { left: 1239px; top: 495px; width: 268px; }
+.event-condition { left: 1515px; top: 495px; width: 268px; }
 
 .dialog-dashboard .manage-condition .legend { left: 56px; top: 174px;}
 .dialog-dashboard .manage-condition li { float: left; width: 60px; text-align: center; }

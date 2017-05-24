@@ -1,10 +1,16 @@
-$(function () {
+$(function() {
 
     // tab 실행
     $('.tabs').tabs();
     // dialog 실행
     $('.popup').dialog({autoOpen: false});
-    $('#dialogDashboard').dialog({autoOpen: true});
+
+
+    // $('#dialogDashboard').dialog('open');  // 대시보드
+    // $('#dialogAssetRegist').dialog('open'); // 자산등록
+    $('#dialogSearchLog').dialog('open'); // Tracking 이력조회
+    // $('#dialogSearchLog2').dialog('open'); // 이력조회
+    // $('#insrstRgnMapAddPopup2').dialog('open'); // 관심지역추가
 
     // sidebar slide button
     $('.btn-slide-toggle').on({
@@ -17,21 +23,22 @@ $(function () {
     // 탭추가
     $('#btnTabAdd').on({
         click: function () {
-            $("#insrstRgnMapAddPopup2").dialog({autoOpen: true});
+            $("#insrstRgnMapAddPopup2").dialog('open');
         }
     });
 
     // 자산추가
     $('#btnAssetAdd').on({
         click: function () {
-            $("#dialogAssetRegist").dialog({autoOpen: true});
+            $("#dialogAssetRegist").dialog('open');
         }
     });
 
     // 대시보드
     $('.btn-dashboard').on({
         click: function () {
-            $("#dialogDashboard").dialog({autoOpen: true});
+            $("#dialogDashboard").dialog('open');
+            dashboard.init();
         }
     });
 
@@ -79,7 +86,7 @@ $(function () {
                 'class': 'btn btn-primary btn-lg btn-block',
                 'text': 'Tracking 이력조회',
                 click: function () {
-                    //
+                    $('#dialogSearchLog2').dialog('open');
                 }
             }
         }
@@ -89,33 +96,18 @@ $(function () {
     $("#dialogSearchLog2").dialog({
         modal: true,
         width: 1200,
-        height: 837,
-        dialogClass: 'dialog-search-log2',
-        open: function () {
-            // todo
-            $('#tabsSearchLog').tabs({
-                beforeLoad: function () {
-                    $(this).find('.tabs-panel > div').hide().eq(0).show();
-                },
-                activate: function (event, ui) {
-                    var idx = $(this).tabs('option', 'active');
-                    $(this).find('.tabs-panel > div').hide().eq(idx).show();
-                }
-            });
-        }
-
+        height: 870,
+        dialogClass: 'dialog-search-log2'
     });
 
 
     $('#dialogDashboard').dialog({
         width: $(window).width(),
         height: $(window).height(),
-        dialogClass: 'dialog-dashboard',
-        create: function (event, ui) {
-            // $(".ui-widget-header").hide();
-            // $(this).hide();
-        }
-    });
+        dialogClass: 'dialog-dashboard'
+    }).append('<button type="button" class="btn btn-refresh"><span class="blind">새로고침</span></button>');
+
+
 
     var dashboard = {
         init: function () {
@@ -147,11 +139,11 @@ $(function () {
 
             var drawChart = function () {
                 var data = [
-                    {value: 8, color: "#0f0", label: '정상수신'},
-                    {value: 3, color: "#ff9100", label: '수신지연'},
-                    {value: 1, color: "#f00", label: '로우배터리'}
+                    {value: 8, color: "#16db16", label: '정상수신'},
+                    {value: 3, color: "#f57a00", label: '수신지연'},
+                    {value: 1, color: "#f02c0e", label: '로우배터리'}
                 ];
-                var deviceGraph = new Chart(document.getElementById("deviceGraph").getContext("2d")).Doughnut(data, {percentageInnerCutout: 86});
+                var deviceGraph = new Chart(document.getElementById("deviceGraph").getContext("2d")).Doughnut(data, {percentageInnerCutout: 88});
 
                 // 범례그리기
                 var items = [];
@@ -197,9 +189,9 @@ $(function () {
                     datasets: [
                         {
                             label: "정상",
-                            fillColor: "rgba(50,229,50,0.2)",
-                            strokeColor: "#9BC53D",
-                            pointColor: "#02C39A",
+                            fillColor: "rgba(22, 219, 22, .1)",
+                            strokeColor: "rgb(22, 219, 22)",
+                            pointColor: "rgb(22, 219, 22)",
                             pointStrokeColor: "#fff",
                             pointHighlightFill: "#fff",
                             pointHighlightStroke: "rgba(220,220,220,1)",
@@ -207,9 +199,9 @@ $(function () {
                         },
                         {
                             label: "지연",
-                            fillColor: "rgba(255,50,50,0.2)",
-                            strokeColor: "#E55934",
-                            pointColor: "#E55934",
+                            fillColor: "rgba(245, 87, 39, .2)",
+                            strokeColor: "rgb(245, 122, 0)",
+                            pointColor: "rgb(245, 122, 0)",
                             pointStrokeColor: "#fff",
                             pointHighlightFill: "#fff",
                             pointHighlightStroke: "rgba(151,187,205,1)",
@@ -236,10 +228,10 @@ $(function () {
 
             var drawChart = function () {
                 var data = [
-                    {value: 10, color: "#0f0", label: 'In'},
-                    {value: 2, color: "#404040", label: 'Out'}
+                    {value: 10, color: "#16db16", label: 'In'},
+                    {value: 2, color: "#999999", label: 'Out'}
                 ];
-                var geoFencing = new Chart(document.getElementById("geoFencing").getContext("2d")).Doughnut(data, {percentageInnerCutout: 80});
+                var geoFencing = new Chart(document.getElementById("geoFencing").getContext("2d")).Doughnut(data, {percentageInnerCutout: 85});
 
                 // 범례그리기
                 var items = [];
@@ -260,10 +252,10 @@ $(function () {
 
             var drawChart = function () {
                 var data = [
-                    {value: 80, color: "#0f0", label: '조치'},
-                    {value: 20, color: "#ff9100", label: '미조치'}
+                    {value: 80, color: "#16db16", label: '조치'},
+                    {value: 20, color: "#f57a00", label: '미조치'}
                 ];
-                var eventCondition = new Chart(document.getElementById("eventCondition").getContext("2d")).Doughnut(data, {percentageInnerCutout: 80});
+                var eventCondition = new Chart(document.getElementById("eventCondition").getContext("2d")).Doughnut(data, {percentageInnerCutout: 85});
 
                 // 범례그리기
                 var items = [];
@@ -277,6 +269,8 @@ $(function () {
                 $target.append(items.join(''));
             }();
         }
-    }.init();
+    };
 
 });
+
+
