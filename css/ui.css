@@ -490,7 +490,7 @@ a { text-decoration: none; color: #2d2d2d; }
 .dialog-search-log2 .asset-list ul { margin:0; float: left;}
 .dialog-search-log2 .asset-list ul li { float: left; margin-left: 10px;}
 .dialog-search-log2 .tabs { background-color: #fff; clear: both;}
-.dialog-search-log2 .ui-tabs-nav li { width: 49.72%; }
+.dialog-search-log2 .ui-tabs-nav li { width: 575px; }
 .dialog-search-log2 .ui-tabs-nav li a { display: block; font-size: 18px; text-align: center; color: #999; height: 40px; padding: 6px 0 0; width: 100%; }
 .dialog-search-log2 .ui-tabs-nav li.ui-state-active a { color: #333; background-color: #fff; }
 .dialog-search-log2 .ui-tabs .ui-tabs-panel { padding: 0; }
