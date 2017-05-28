@@ -2,31 +2,27 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KT Tracker</title>
-    <link rel="stylesheet" href="/css/jquery-ui.css">
     <link rel="stylesheet" href="/css/ui.css">
     <script src="/js/jquery.js"></script>
     <script src="/js/jquery-ui.js"></script>
     <script src="/js/Chart.min.js"></script>
+    <script src="/js/jquery.animateNumber.js"></script>
+    <script src="/js/jquery.bxslider.js"></script>
     <script src="/js/ui.js"></script>
     <script src="/js/common.js"></script>
-    <script>ui.menuSet("m01000000");</script>
+    <script>ui.menuSet("m01000000")</script>
 </head>
 <body>
 
 <div id="container">
     <div id="header">
         <div class="news-ticker">
-            <ul>
-                <li><span class="title">최근공지: OTP ※ 가이드</span> <span class="date">2016-12-07</span></li>
-                <li>news ticker 2</li>
-                <li>news ticker 3</li>
-            </ul>
-            <div class="scrollList-controller">
-                <button type="button" class="btn btn-prev"><span class="blind">이전</span></button>
-                <button type="button" class="btn btn-next"><span class="blind">다음</span></button>
+            <div>
+                <div><span class="title">최근공지: OTP ※ 가이드</span> <span class="date">2016-12-07</span></div>
+                <div>news ticker 2</div>
+                <div>news ticker 3</div>
             </div>
         </div>
         <div class="submenu">
@@ -103,18 +99,22 @@
                 <div id="content">
                     <div class="content-header-area">
                         <div class="location">전라북도 진안군 주천면 주양리 산 51-11</div>
-                        <div class="search-area"><input type="text">
+                        <div class="search-form">
+                            <input type="text" placeholder="지역검색">
                             <button type="button" class="btn btn-search"><span class="blind">검색하기</span></button>
                         </div>
-                        <div class="map-area">
+                        <div id="toggleMapMode" class="btn-toggle">
+                            <button type="button" class="btn on">일반</button>
                             <button type="button" class="btn">위성</button>
-                            <button type="button" class="btn">지도</button>
                         </div>
                     </div>
 
                     <div id="map-area">
+                        <!--지도영역-->
+                        <!--대시보드 버튼-->
                         <button type="button" class="btn btn-dashboard"><span class="blind">dashboard</span></button>
-                        // 지도영역
+                        <!--그래프-->
+                        <div class="map-area-graph"></div>
                     </div>
                 </div>
             </div>

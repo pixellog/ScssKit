@@ -9,7 +9,7 @@ var ui = {
                 init: function () {
                     this.header();
                     // this.title();
-                    this.quick();
+                    // this.quick();
                 },
                 header: function () {
                     // GNB
@@ -18,7 +18,7 @@ var ui = {
                     $.each(data, function (key, val) {
                         if (key.slice(0, 3) === 'm00') return;
                         var x = activeId.slice(0, 3) === key.slice(0, 3); // 1depth
-                        items.push("<li " + (x ? 'class=on' : '') + "><a href='" + val.url + "'>" + val.name + "</a>");
+                        items.push("<li " + (x ? 'class=on' : '') + "><a href='" + val.url + "'><span class='blind'>" + val.name + "</span></a>");
                         if (val.sub) {
                             items.push("<ul class='depth2'>");
                             $.each(val.sub, function (i, data) {

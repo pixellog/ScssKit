@@ -1,14 +1,25 @@
-$(function() {
+$(function () {
 
-    // tab 실행
+    jQuery.fn.extend({
+        toggleButton: function () {
+            this.each(function () {
+                var $this = $(this);
+                $this.find('button').on({
+                    click: function () {
+                        $(this).addClass('on').siblings().removeClass('on');
+                    }
+                });
+            })
+        }
+    });
+
+    $('.btn-toggle').toggleButton();
     $('.tabs').tabs();
-    // dialog 실행
     $('.popup').dialog({autoOpen: false});
-
 
     // $('#dialogDashboard').dialog('open');  // 대시보드
     // $('#dialogAssetRegist').dialog('open'); // 자산등록
-    $('#dialogSearchLog').dialog('open'); // Tracking 이력조회
+    // $('#dialogSearchLog').dialog('open'); // Tracking 이력조회
     // $('#dialogSearchLog2').dialog('open'); // 이력조회
     // $('#insrstRgnMapAddPopup2').dialog('open'); // 관심지역추가
 
@@ -38,7 +49,6 @@ $(function() {
     $('.btn-dashboard').on({
         click: function () {
             $("#dialogDashboard").dialog('open');
-            dashboard.init();
         }
     });
 
@@ -104,9 +114,11 @@ $(function() {
     $('#dialogDashboard').dialog({
         width: $(window).width(),
         height: $(window).height(),
-        dialogClass: 'dialog-dashboard'
+        dialogClass: 'dialog-dashboard',
+        open: function () {
+            dashboard.init();
+        }
     }).append('<button type="button" class="btn btn-refresh"><span class="blind">새로고침</span></button>');
-
 
 
     var dashboard = {
@@ -132,6 +144,12 @@ $(function() {
                 items.push('<li><img src="' + this.icon + '" alt=""><span class="title">' + this.title + '</span><span class="value">' + this.value + '</span></li>');
             });
             $target.append('<ul class="legend">' + items.join('') + '</ul>');
+            // value animation
+            $target.find('.value').each(function () {
+                var $this = $(this);
+                var val = $this.text();
+                $this.animateNumber({number: val}, 600);
+            });
         },
         deviceConditionSet: function () { // 단말기상태
             var $target = $('.device-condition');
@@ -270,6 +288,58 @@ $(function() {
             }();
         }
     };
+
+
+    // 뉴스티커
+    $('.news-ticker > div').bxSlider({
+        mode: 'vertical',
+        auto: true, // auto rolling
+        autoHover: true,
+        autoControls: false, // play,stop button display
+        pager: false,
+        slideWidth: 500
+    });
+
+    // 지도위 그래프
+    function mapAreaGraph() {
+        var $target = $('.map-area-graph');
+
+        var data = [
+            {value: 8, color: "#16db16", label: '정상'},
+            {value: 4, color: "#f57a00", label: '장애'}
+        ];
+
+        $target.append('<h4>전체 <strong>' + ~~(data[0].value + data[1].value) + '</strong></h4>');
+
+        $target.append('<div class="graph1"><canvas id="mapAreaGraph" width="82" height="82"></canvas></div>');
+        var drawChart = function () {
+            var data1 = $.extend(true, {}, data);
+            data1[1].color = 'rgba(0,0,0,0)';
+            var mapAreaGraph = new Chart(document.getElementById("mapAreaGraph").getContext("2d")).Doughnut(data1, {percentageInnerCutout: 65});
+
+            // 범례그리기
+            var items = [];
+            items.push('<ul class="legend"><li><strong class="title" style="color:' + data1[0].color + '">' + data[0].label + '</strong></li></ul>');
+            items.push('<div class="counter"><strong>' + data[0].value + '</strong></div>');
+            $target.find('.graph1').append(items.join(''));
+        }();
+
+        $target.append('<div class="graph2"><canvas id="mapAreaGraph2" width="82" height="82"></canvas></div>');
+        var drawChart2 = function () {
+            var data2 = $.extend(true, {}, data);
+            data2[0].color = 'rgba(0,0,0,0)';
+            // data[1].color = '#f57a00';
+            var mapAreaGraph2 = new Chart(document.getElementById("mapAreaGraph2").getContext("2d")).Doughnut(data2, {percentageInnerCutout: 65});
+
+            // 범례그리기
+            var items = [];
+            items.push('<ul class="legend"><li><strong class="title" style="color:' + data2[1].color + '">' + data[1].label + '</strong></li></ul>');
+            items.push('<div class="counter"><strong>' + data[1].value + '</strong></div>');
+            $target.find('.graph2').append(items.join(''));
+        }();
+    }
+
+    mapAreaGraph();
 
 });
 
