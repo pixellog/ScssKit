@@ -1,5 +1,5 @@
-@import url("jquery-ui.css");
-@import url("jquery.bxslider.css");
+@import url("./vendor/jquery-ui.css");
+@import url("./vendor/jquery.bxslider.css");
 @import url("_common.css");
 @import url("_layout.css");
 @import url("_dialog_dashboard.css");
@@ -47,4 +47,4 @@
 .dialog-search-log2 .table-fixed tr > *:nth-child(4) { width: 100px; }
 .dialog-search-log2 .map-area { height: 550px; background-color: #efefef; }
 
-
+#insrstRgnMapAddPopup2 input { margin: 20px 0;}

@@ -19,7 +19,7 @@ $(function () {
 
     // $('#dialogDashboard').dialog('open');  // 대시보드
     // $('#dialogAssetRegist').dialog('open'); // 자산등록
-    // $('#dialogSearchLog').dialog('open'); // Tracking 이력조회
+    $('#dialogSearchLog').dialog('open'); // Tracking 이력조회
     // $('#dialogSearchLog2').dialog('open'); // 이력조회
     // $('#insrstRgnMapAddPopup2').dialog('open'); // 관심지역추가
 
@@ -54,7 +54,7 @@ $(function () {
 
     // 탭추가 팝업
     $("#insrstRgnMapAddPopup2").dialog({
-        width: 320,
+        width: 360,
         buttons: {
             '다음': {
                 'class': 'btn btn-primary',
