@@ -1,5 +1,5 @@
 {
-  "m00000000" : { "depth":0, "name":"KT Tracker", "url":"#none", "target":"_self"},
+  "m00000000" : { "depth":0, "name":"KT Tracker", "url":"/index.html", "target":"_self"},
 
   "m01000000" : { "name":"운행관제", "url":"#none", "target":"_self"},
 
@@ -26,5 +26,15 @@
   "m05000000" : { "name":"서비스관리", "url":"#none", "target":"_self", "sub" : [
     {"m05010000" : { "name":"고객사관리", "url":"#none", "target":"_self"}},
     {"m05020000" : { "name":"고객지원", "url":"#none", "target":"_self"}}
+  ]},
+
+  "m10000000" : { "name":"로그인", "url":"/html/login.html", "target":"_self"},
+
+  "m20000000" : { "name":"팝업", "url":"", "target":"_self", "sub" : [
+    {"m20010000" : { "name":"대시보드", "url":"/html/popup/_dashboard.html", "target":"_self"}},
+    {"m20020000" : { "name":"자산등록", "url":"/html/popup/_assetRegist.html", "target":"_self"}},
+    {"m20030000" : { "name":"Tracking 이력조회", "url":"/html/popup/_searchLog.html", "target":"_self"}},
+    {"m20040000" : { "name":"Tracking 이력조회 상세", "url":"/html/popup/_searchLog2.html", "target":"_self"}},
+    {"m20050000" : { "name":"관심지역추가", "url":"/html/popup/_addMap.html", "target":"_self"}}
   ]}
 }

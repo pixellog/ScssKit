@@ -3,7 +3,7 @@
 .content-header-area .search-form { width: 400px; position: absolute; right: 133px; top: 4px; }
 .content-header-area .search-form input { width: 100%; }
 .content-header-area .search-form .btn-search { position: absolute; right: 10px; top: 0; width: 26px; height: 26px; background: url(/img/ico_search_nor.png) 50% no-repeat; }
-.content-header-area .btn-toggle { width: 100px; position: absolute; right: 20px; top: 5px; }
+.content-header-area .btn-group { width: 100px; position: absolute; right: 20px; top: 5px; }
 
 #map-area { background-color: #ddd; left: 0; right: 0; top: 183px; bottom: 0; position: fixed; }
 .btn-dashboard { position: absolute; top: 0; left: 50%; margin-left: -55px; z-index: 10; width: 224px; height: 44px; background: url(/img/ico_dashboard.png) 0 0 no-repeat; }

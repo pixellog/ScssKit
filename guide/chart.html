@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/node_modules/highcharts/highcharts.js"></script>
+    <script src="/node_modules/highcharts/modules/exporting.js"></script>
+</head>
+<body>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 300px; height: 300px; max-width: 300px; margin: 0 auto"></div>
+
+<script>
+    Highcharts.setOptions({
+        colors: ['#16db16', '#f57a00', '#f02c0e']
+    });
+
+    Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            type: 'pie'
+        },
+        /* title: {
+         text: 'Browser<br>shares<br>2015',
+         align: 'center',
+         verticalAlign: 'middle',
+         y: 40
+         }, */
+        tooltip: { // 아래코드시 데이터값이 백분율로 나옴
+            // pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                showInLegend: true,
+                dataLabels: {
+                    enabled: false, // lable 여부
+                    distance: 0, // in, out
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white'
+                    }
+                },
+                startAngle: -180,
+                endAngle: 180,
+                //center: ['50%', '75%']
+            }
+        },
+        series: [{
+            // name: 'Browser share',
+            innerSize: '90%', // 차트두께
+            data: [
+                ['정상수신', 8],
+                ['수신지연', 3],
+                ['로우배터리', 1]
+            ]
+        }]
+    });
+
+</script>
+</body>
+</html>

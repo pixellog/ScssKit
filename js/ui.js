@@ -18,6 +18,9 @@ var ui = {
                     $.each(data, function (key, val) {
                         if (key.slice(0, 3) === 'm00') return;
                         var x = activeId.slice(0, 3) === key.slice(0, 3); // 1depth
+
+                        if(~~key.slice(1, 3) > 10) return; // menu.json에서 m10이상으로 시작하는 화면아이디에 대해서는 gnb 노출 안함
+
                         items.push("<li " + (x ? 'class=on' : '') + "><a href='" + val.url + "'><span class='blind'>" + val.name + "</span></a>");
                         if (val.sub) {
                             items.push("<ul class='depth2'>");
