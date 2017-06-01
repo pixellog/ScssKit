@@ -17,6 +17,11 @@
     "gulp-sourcemaps": "^1.9.1"
   },
   "dependencies": {
-    "chart.js": "^2.5.0"
+    "bxslider": "^4.2.11",
+    "egjs": "^1.5.0",
+    "highcharts": "^5.0.12",
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
+    "jquery.animate-number": "0.0.14"
   }
 }
