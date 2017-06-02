@@ -23,13 +23,24 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(_baseCss));
 });
 
-gulp.task('browser-sync', function () {
-    browserSync.init([_baseCss + "/**/*.css",_base+ "*.html"], {
-        notify: false,
-        port: 9000,
+// gulp.task('browser-sync', function () {
+//     browserSync.init([_baseCss + "/**/*.css",_base+ "*.html"], {
+//         notify: false,
+//         port: 9000,
+//         server: {
+//             baseDir: _base
+//         }
+//     });
+// });
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        files: '*.html',
         server: {
-            baseDir: _base
-        }
+            baseDir: './'
+        },
+        port: 9000,
+        notify: false
     });
 });
 
