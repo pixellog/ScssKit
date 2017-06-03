@@ -37,7 +37,7 @@ var ui = {
                     items.push("</ul>");
 
                     var menuHtml = items.join('');
-                    $('#header').append('<h1 class="logo"><a href="./"><span class="blind">KT Tracker</span></a></h1>' + menuHtml);
+                    $('#header').append('<h1 class="logo"><a href=""><span class="blind">KT Tracker</span></a></h1>' + menuHtml);
 
                     $('#header .depth1 a').on('mouseenter', function () {
                         $(this).parent().siblings().find('ul').hide();

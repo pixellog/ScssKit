@@ -94,7 +94,7 @@
                     total += this.value;
                 });
                 items.push('</ul>');
-                $target.append(items.join('') + '<div class="counter"><img src="/img/ico_device.png" alt="" /><strong>' + total + '</strong>대</div>');
+                $target.append(items.join('') + '<div class="counter"><img src="/docs/img/ico_device.png" alt="" /><strong>' + total + '</strong>대</div>');
             }();
         },
         errorConditionSet: function () { // 장애현황
@@ -115,7 +115,7 @@
                 total += this.value;
                 return total;
             });
-            $target.append('<div class="counter"><img src="/img/ico_warning.png" alt="" /> <strong>' + total + '</strong> 건</div><ul class="legend">' + items.join('') + '</ul>');
+            $target.append('<div class="counter"><img src="/docs/img/ico_warning.png" alt="" /> <strong>' + total + '</strong> 건</div><ul class="legend">' + items.join('') + '</ul>');
         }
         ,
         timeConditionSet: function () { // 시간대별 수신현황
