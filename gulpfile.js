@@ -4,7 +4,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
 var autoprefixer = require('gulp-autoprefixer');
 
-var _base = './';
+var _base = './docs/';
 var _baseCss = _base + 'css';
 var _baseJs = _base + 'js';
 var _baseHtml = _base;
@@ -23,13 +23,14 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(_baseCss));
 });
 
-gulp.task('browser-sync', function () {
-    browserSync.init([_baseCss + "/**/*.css",_base+ "*.html"], {
-        notify: false,
-        port: 9000,
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        files: '*.html',
         server: {
             baseDir: _base
-        }
+        },
+        port: 9000,
+        notify: false
     });
 });
 

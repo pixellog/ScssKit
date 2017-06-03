@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자산등록</title>
+</head>
+<body>
+<div id="dialogAssetRegist" class="popup" title="자산등록">
+    <img src="/img/asset_thum.png" alt="사진선택">
+    <dl>
+        <dt>구분</dt>
+        <dd>
+            <select name="" id="">
+                <option value="">1차 분류</option>
+                <option value="">Asset</option>
+                <option value="">물류</option>
+                <option value="">이동체</option>
+            </select>
+            <select name="" id="">
+                <option value="">2차 분류</option>
+                <option value="">OA기기</option>
+                <option value="">건설중장비</option>
+                <option value="">작업기기</option>
+                <option value="">의료기기</option>
+                <option value="">담보자산</option>
+
+                <option value="">컨테이너</option>
+                <option value="">신선물류박스</option>
+                <option value="">팔레트</option>
+                <option value="">카트</option>
+                <option value="">캐리어</option>
+                <option value="">샷시</option>
+
+                <option value="">법인차</option>
+                <option value="">통학버스</option>
+                <option value="">특수차량</option>
+                <option value="">이륜차</option>
+            </select>
+        </dd>
+        <dt>자산명</dt>
+        <dd><input type="text" placeholder="ex: 카고 로더01"></dd>
+        <dt>관리자명</dt>
+        <dd><input type="text" placeholder="ex: 카고 로더02"></dd>
+    </dl>
+</div>
+
+<script>
+    $("#dialogAssetRegist").dialog({
+        modal:true,
+        width: 320,
+        dialogClass: 'dialog-asset-regist',
+        buttons: {
+            '등록하기': {
+                'class': 'btn btn-primary btn-lg btn-block',
+                'text': '등록하기',
+                click: function () {
+                    //
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

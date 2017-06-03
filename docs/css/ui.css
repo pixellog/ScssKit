@@ -1,0 +1,55 @@
+@import url("vendor/jquery-ui.css");
+@import url("vendor/jquery.bxslider.css");
+@import url("_base.css");
+@import url("_button.css");
+@import url("_table.css");
+@import url("_grid.css");
+@import url("_layout.css");
+@import url("_common.css");
+@import url("_dialog_dashboard.css");
+@import url("_main.css");
+@import url("_login.css");
+
+/* .dialog-notitle */
+/*.dialog-notitle .ui-widget-header .ui-icon { background: url(/img/ico_close_notitle.png) 0 0 no-repeat; }*/
+/*.dialog-notitle .ui-dialog-titlebar { background-color: transparent; position: absolute; width: 100%; }*/
+/*.dialog-notitle .ui-dialog-title { display: none; }*/
+/*.dialog-notitle::after { content: ''; position: absolute; width: 36px; left: 50%; margin-left: -18px; height: 32px; bottom: -32px; display: block; background: url(/img/ico_notitle_tail.png) 0 0 no-repeat; }*/
+/* 팝업 : 자산등록 */
+.dialog-asset-regist img { margin: 0 auto; display: inherit; }
+.dialog-asset-regist dl { text-align: left; }
+.dialog-asset-regist dl input { width: 100%; }
+.dialog-asset-regist dl select { width: 48%; }
+.dialog-asset-regist dl select:last-child { position: absolute; right: 0; }
+.dialog-asset-regist dt { margin: 7px 0 2px; }
+.dialog-asset-regist dd { position: relative; }
+/* 팝업 : Tracking 이력조회 */
+.dialog-search-log2 .asset-list { clear: both; overflow: hidden; margin-bottom: 10px; }
+.dialog-search-log2 .asset-list > li { background: none; }
+.dialog-search-log2 .asset-list .statu { float: left; }
+.dialog-search-log2 .asset-list ul { margin: 0; float: left; }
+.dialog-search-log2 .asset-list ul li { float: left; margin-left: 10px; }
+.dialog-search-log2 .tabs { background-color: #fff; clear: both; }
+.dialog-search-log2 .ui-tabs-nav li { width: 575px; }
+.dialog-search-log2 .ui-tabs-nav li a { display: block; font-size: 18px; text-align: center; color: #999; height: 40px; padding: 6px 0 0; width: 100%; }
+.dialog-search-log2 .ui-tabs-nav li.ui-state-active a { color: #333; background-color: #fff; }
+.dialog-search-log2 .ui-tabs .ui-tabs-panel { padding: 0; }
+.dialog-search-log2 .tabs-header { position: relative; padding: 20px 0; }
+.dialog-search-log2 .tabs-header .form-date { text-align: center; }
+.dialog-search-log2 .tabs-header .form-date .btn-prev { width: 17px; height: 17px; background: url(/img/ico_prev.png) 0 0 no-repeat; }
+.dialog-search-log2 .tabs-header .form-date .btn-next { width: 17px; height: 17px; background: url(/img/ico_next.png) 0 0 no-repeat; }
+.dialog-search-log2 .tabs-header .form-date .btn-date { background: transparent url(/img/ico_calendar.png) 10px 6px no-repeat; border: 1px solid #a8abb3; border-radius: 15px; padding: 2px 10px; margin: 0 5px; font-size: 18px; color: #333; text-indent: 20px; }
+.dialog-search-log2 .tabs-header .btn-primary { position: absolute; right: 0; top: 20px; padding: 0 36px; }
+.dialog-search-log2 .tabs-header ol { clear: both; overflow: hidden; padding: 0; padding-top: 10px; margin-left: 4px; }
+.dialog-search-log2 .tabs-header li { float: left; width: 45px; text-align: center; margin-left: 1px; line-height: 26px; }
+.dialog-search-log2 .tabs-header li button { height: 26px; display: block; width: 100%; }
+.dialog-search-log2 .tabs-header li.active button { background: #48aaf0 url(/img/ico_chk.png) 50% no-repeat; }
+.dialog-search-log2 .table-fixed thead { display: block; overflow: auto; width: 100%; }
+.dialog-search-log2 .table-fixed tbody { display: block; height: 498px; overflow: auto; width: 100%; }
+.dialog-search-log2 .table-fixed tr > *:nth-child(1) { width: 180px; }
+.dialog-search-log2 .table-fixed tr > *:nth-child(2) { width: 750px; }
+.dialog-search-log2 .table-fixed tr > *:nth-child(3) { width: 100px; }
+.dialog-search-log2 .table-fixed tr > *:nth-child(4) { width: 100px; }
+.dialog-search-log2 .map-area { height: 550px; background-color: #efefef; }
+
+#insrstRgnMapAddPopup2 input { margin: 20px 0;}

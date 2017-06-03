@@ -1,0 +1,58 @@
+/* dialog-dashboard */
+.dialog-dashboard { background: #ebedf0 url(/img/dashboard_title.png) 50% 15px no-repeat; border: 0 !important; }
+.dialog-dashboard .ui-dialog-titlebar { background: transparent url(/img/logo.png) 20px 15px no-repeat; }
+.dialog-dashboard .ui-dialog-title { display: none; }
+.dialog-dashboard .ui-dialog-titlebar .ui-button,
+.dialog-dashboard .ui-dialog-titlebar .ui-button:hover { width: 22px; height: 22px; background: url(/img/btn_close.png) 0 0 no-repeat !important; }
+.dialog-dashboard .ui-dialog-titlebar-close { right: 20px; top: 16px; margin-top: 0; }
+.dialog-dashboard .ui-dialog-content { position: static; }
+.dialog-dashboard .btn-refresh { position: absolute; right: 71px; top: 16px; width: 23px; height: 23px; background: transparent url(/img/ico_refresh.png) 0 0 no-repeat; }
+.dialog-dashboard .items { padding: 30px; height: 424px; border: 1px solid rgb(225, 227, 230); border-radius: 3px; background-color: #fff; position: absolute; }
+.dialog-dashboard h3 { margin-bottom: 67px; font-size: 24px; color: rgb(51, 51, 51); line-height: 1.2; }
+.dialog-dashboard canvas { position: absolute; }
+.dialog-dashboard .legend { position: absolute; }
+.dialog-dashboard .legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
+.dialog-dashboard .legend .title { font-size: 15px; display: inline-block; }
+.dialog-dashboard .legend .value { font-size: 28px; }
+.dialog-dashboard .counter { position: absolute; font-size: 20px; }
+.dialog-dashboard .counter strong { font-weight: 400; font-size: 28px; line-height: 1; display: inline-block; }
+.manage-condition { left: 135px; top: 63px; width: 544px; }
+.device-condition { left: 687px; top: 63px; width: 544px; }
+.error-condition { left: 1239px; top: 63px; width: 544px; }
+.time-condition { left: 135px; top: 495px; width: 1096px; }
+.geo-fencing { left: 1239px; top: 495px; width: 268px; }
+.event-condition { left: 1515px; top: 495px; width: 268px; }
+.dialog-dashboard .manage-condition .legend { left: 56px; top: 174px; }
+.dialog-dashboard .manage-condition li { float: left; width: 60px; text-align: center; }
+.dialog-dashboard .manage-condition li + li { margin-left: 32px; }
+.dialog-dashboard .manage-condition li span { display: block; }
+.dialog-dashboard .manage-condition li .title { margin: 12px 0 16px; }
+.dialog-dashboard .device-condition canvas { left: 60px; top: 130px; }
+.dialog-dashboard .device-condition .legend { left: 330px; top: 166px; width: 150px; }
+.dialog-dashboard .device-condition .legend li { display: block; }
+.dialog-dashboard .device-condition .legend .title { line-height: 38px; width: 88px; }
+.dialog-dashboard .device-condition .legend .value { line-height: 38px; }
+.dialog-dashboard .device-condition .counter { left: 136px; top: 194px; }
+.dialog-dashboard .device-condition .counter img { display: block; margin: 0 auto 8px; }
+.dialog-dashboard .error-condition .legend { left: 56px; top: 214px; }
+.dialog-dashboard .error-condition li { width: 50%; float: left; padding: 5px 0; }
+.dialog-dashboard .error-condition li:last-child .value { color: #f00; }
+.dialog-dashboard .error-condition .icon { display: inline-block; width: 26px; margin-right: 6px; text-align: center; }
+.dialog-dashboard .error-condition .title { display: inline-block; width: 88px; }
+.dialog-dashboard .error-condition .value { display: inline-block; margin-left: 5px; }
+.dialog-dashboard .error-condition .counter { left: 56px; top: 137px; color: #f00; }
+.dialog-dashboard .error-condition .counter strong { margin-left: 10px; }
+.dialog-dashboard .geo-fencing canvas { left: 56px; top: 180px; }
+.dialog-dashboard .geo-fencing .legend { left: 77px; top: 122px; }
+.dialog-dashboard .geo-fencing .legend li { float: left; }
+.dialog-dashboard .geo-fencing .legend .title { width: 40px; }
+.dialog-dashboard .geo-fencing .counter { left: 97px; top: 240px; }
+.dialog-dashboard .time-condition h3 small { font-size: 15px; color: rgb(51, 51, 51); }
+.dialog-dashboard .time-condition canvas { left: 56px; top: 160px; }
+.dialog-dashboard .time-condition .legend { left: 56px; top: 120px; }
+.dialog-dashboard .time-condition .legend li { float: left; width: 58px; }
+.dialog-dashboard .event-condition canvas { left: 56px; top: 180px; }
+.dialog-dashboard .event-condition .legend { left: 77px; top: 122px; }
+.dialog-dashboard .event-condition .legend li { float: left; }
+.dialog-dashboard .event-condition .legend .title { width: 55px; }
+.dialog-dashboard .event-condition .counter { left: 97px; top: 240px; width: 80px; text-align: center; }

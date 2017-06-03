@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>관심지역추가</title>
+</head>
+<body>
+
+<div id="insrstRgnMapAddPopup2" class="popup" title="관심지역추가">
+    <h4>선택한 장소의 관심지역명을 등록해 주세요.</h4>
+
+    <input type="text" value="" id="insrstRgnName" maxlength="30" placeholder="관심지역명" size="38">
+
+    <p>주소를 다시 검색하시려면 <a href="#none">여기</a>를 눌러 주세요. <br> 초기 검색 페이지로 돌아갑니다.</p>
+</div>
+
+<script>
+    $("#insrstRgnMapAddPopup2").dialog({
+        modal:true,
+        width: 360,
+        buttons: {
+            '다음': {
+                'class': 'btn btn-primary',
+                'text': '다음',
+                click: function () {
+                    //
+                }
+            },
+            '취소': {
+                'class': 'btn btn-primary',
+                'text': '취소',
+                click: function () {
+                    $(this).dialog('close');
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

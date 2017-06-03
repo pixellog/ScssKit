@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/highcharts.src.js"></script>
+</head>
+<body>
+
+<div id="graph1" style="float:left;width: 120px; height: 100px;"></div>
+<div id="graph2" style="float:left;width: 120px; height: 100px;"></div>
+<div id="graph3" style="float:left;width: 120px; height: 100px;"></div>
+
+<script>
+    $(function () {
+        Highcharts.setOptions({
+            title: false,
+            chart: {
+                type: 'pie'
+            },
+            plotOptions: {
+                pie: {
+                    showInLegend: true,
+                    dataLabels: false,
+                    startAngle: 0,
+                    endAngle: 360
+                }
+            },
+            legend: {
+                align: 'right',
+                verticalAlign: 'top',
+                floating: true,
+                x: -16,
+                y: 15,
+                labelFormatter: function () {
+                    return '<span>' + this.name + '</span><br><span style="font-weight: normal;">'+this.series.total+'</span>';
+                }
+            },
+            credits: {
+                enabled: false
+            }
+        });
+
+        var chart1 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'graph1'
+            },
+            colors: ['#16db16'],
+            series: [{
+                innerSize: '76%', // 차트두께
+                data: [
+                    ['정상', 12]
+                ]
+            }]
+        });
+
+        var chart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'graph2'
+            },
+            colors: ['#f57a00'],
+            series: [{
+                innerSize: '76%',
+                data: [
+                    ['장애', 2]
+                ]
+            }]
+        });
+
+        var chart3 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'graph3'
+            },
+            colors: ['#f02c0e'],
+            series: [{
+                innerSize: '76%',
+                data: [
+                    ['배터리경고', 2]
+                ]
+            }],
+            legend: {
+                x: 10
+            }
+        });
+
+        // 범례심볼 숨기기
+        $('.highcharts-legend-item .highcharts-point').hide();
+
+    });
+</script>
+</body>
+</html>
