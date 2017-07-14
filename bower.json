@@ -1,0 +1,22 @@
+{
+  "name": "ScssKit",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "loh <pixellog@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/pixellog/ScssKit",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery-ui": "^1.12.1",
+    "jquery": "^3.2.1"
+  }
+}
